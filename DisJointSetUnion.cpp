@@ -83,3 +83,8 @@ int main(){
     // The time complexity of the union-find algorithm with path compression and union by size is nearly constant,  
     return 0;
 }
+    // specifically O(α(n)), where α is the inverse Ackermann function. 
+    // This is very efficient for practical purposes, even for large values of n.
+    // The space complexity is O(n) due to the storage of parent, rank, and size arrays.
+    
+    //https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
