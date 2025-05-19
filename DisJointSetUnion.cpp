@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+/*
+547. Number of Provinces
+https://leetcode.com/problems/number-of-provinces/submissions/1638645502/
+
+Minimum Spanning Tree
+//https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1
+*/
+
+
 class DisjointSetUnion {
 private:
     vector<int> parent, rank,size;
