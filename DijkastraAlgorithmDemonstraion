@@ -1,0 +1,26 @@
+int CheapestFLight(int n, vector<vector<int>>& flights, int src, int dst, int K) {
+	vector<int>adj[n];
+	for(auto it :flights){
+		adj[it[0]].push_back(it[1],it[2]);
+	}
+	queue<pair<int,pair<int,int>>>q;
+	q.push({0,{src,0}});// total curr cost,curr-node,total stops taken
+	vector<int>dist(n,1e9);
+	while(!q.empty()){
+	auto it=q.front();
+	q.pop();
+	int currCost=it.first;
+	int currNode=it.second.first;
+	int stopsTaken=it.second.second;
+	if(stopsTaken>k)continue;
+	for(auto itr :adj[currNode]){
+		int eN=itr.first;
+		int eW=itr.second;
+		if(dist[currNode]+eW<dist[eN]){
+			dist[eN]=dist[currNode]+eW;
+			q.push({dist[eN],{eN,stopsTaken+1}});
+		}
+	}
+	}
+	return dist[dst]==1e9?-1:dist[dst];
+}
